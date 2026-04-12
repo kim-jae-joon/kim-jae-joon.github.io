@@ -42,3 +42,5 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/kim-jae-joon"
+
+future: true
