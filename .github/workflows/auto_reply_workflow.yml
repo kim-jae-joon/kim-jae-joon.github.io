@@ -2,8 +2,8 @@ name: Scheduled Auto Reply Bot
 
 on:
   schedule:
-    # 1시간마다 정각에 실행
-    - cron: '0 * * * *'
+    # 5분마다 실행 (GitHub Actions 지원 최소 단위)
+    - cron: '*/5 * * * *'
   # 깃허브 웹 화면에서 수동 버튼 실행 허용
   workflow_dispatch:
 

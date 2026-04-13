@@ -22,7 +22,7 @@ auth = Auth.Token(GITHUB_TOKEN)
 g = Github(auth=auth)
 repo = g.get_repo("kim-jae-joon/kim-jae-joon.github.io") # 본인의 소유자/저장소명으로 변경 필요
 
-print("🔎 블로그에 새로 달린 댓글이 있는지 1시간 단위 클라우드 스캔 중입니다...")
+print("🔎 블로그에 새로 달린 댓글이 있는지 5분 단위 클라우드 스캔 중입니다...")
 issues = repo.get_issues(state='open')
 reply_count = 0
 
