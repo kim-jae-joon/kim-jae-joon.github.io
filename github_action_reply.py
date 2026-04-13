@@ -12,7 +12,7 @@ if not GITHUB_TOKEN or not GEMINI_API_KEY:
 
 # 2. Gemini API 초기화
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash') # 최신/빠른 제미나이 모델명
+model = genai.GenerativeModel('gemini-2.5-pro') # 최신 2.5 프로 모델명
 
 # 3. GitHub 객체 초기화 (이 객체로 레포지토리에 접근하여 댓글을 찾거나 답니다)
 g = Github(GITHUB_TOKEN)
