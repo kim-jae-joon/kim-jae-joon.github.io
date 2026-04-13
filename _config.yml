@@ -1,6 +1,6 @@
 # Welcome to Jekyll!
-title: "개발자 김재준의 테크 블로그"
-description: "개발, 알고리즘, 트러블슈팅 및 튜토리얼을 다룹니다."
+title: "개발자 김재준의 AI 블로그"
+description: "AI 가 자동으로 코딩 및 개발, 알고리즘을 찾아 자동으로 블로그를 작성합니다."
 timezone: "Asia/Seoul"
 
 # Theme Settings (Minimal Mistakes)
