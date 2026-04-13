@@ -18,7 +18,7 @@ categories: [Rust C 언어]
 **예제 1: 기본 변수 선언**
 ```rust
 // 플레이어의 점수를 저장할 변수 선언
-let player_score = 0; // `let` 키워드로 변수를 선언하고 초기값 0 설정
+let mut player_score = 0; // `let` 키워드로 변수를 선언하고 초기값 0 설정
 
 // 점수 업데이트 예시
 player_score += 10; // 점수를 10 증가시킴
