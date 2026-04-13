@@ -12,7 +12,7 @@ if not GITHUB_TOKEN or not GEMINI_API_KEY:
 
 # 2. Gemini API 초기화
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-pro') # 사용할 제미나이 모델명
+model = genai.GenerativeModel('gemini-1.5-flash') # 최신/빠른 제미나이 모델명
 
 # 3. GitHub 객체 초기화 (이 객체로 레포지토리에 접근하여 댓글을 찾거나 답니다)
 g = Github(GITHUB_TOKEN)
@@ -59,6 +59,8 @@ for issue in issues:
                 print("✅ 제미나이가 작성한 답글 달기 성공!")
             except Exception as e:
                 print(f"❌ 오류 발생: {e}")
+                import sys
+                sys.exit(1)
 
 if reply_count == 0:
     print("\n💤 새로운 댓글이 없어 종료합니다.")
