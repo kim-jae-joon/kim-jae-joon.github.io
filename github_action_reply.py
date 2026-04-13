@@ -1,6 +1,8 @@
 import os
+import sys
 from github import Github
-import google.generativeai as genai
+from github import Auth
+from google import genai
 
 # 1. GitHub Action에서 넘겨준 환경변수 (Secrets) 읽어오기
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
@@ -10,16 +12,15 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 if not GITHUB_TOKEN or not GEMINI_API_KEY:
     raise ValueError("필수 토큰(GITHUB_TOKEN 또는 GEMINI_API_KEY)이 존재하지 않습니다.")
 
-# 2. Gemini API 초기화
-genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-2.5-pro') # 최신 2.5 프로 모델명
+# 2. 최신 Gemini API 초기화 (google-genai 패키지 사용)
+client = genai.Client(api_key=GEMINI_API_KEY)
+# 무료 티어에서 쿼터 제한이 없는 'gemini-2.5-flash' 권장 (2.5-pro는 제한이 있을 수 있음)
+model_id = 'gemini-2.5-flash'
 
-# 3. GitHub 객체 초기화 (이 객체로 레포지토리에 접근하여 댓글을 찾거나 답니다)
-g = Github(GITHUB_TOKEN)
+# 3. GitHub 객체 초기화 (최신 Auth 방식 적용)
+auth = Auth.Token(GITHUB_TOKEN)
+g = Github(auth=auth)
 repo = g.get_repo("kim-jae-joon/kim-jae-joon.github.io") # 본인의 소유자/저장소명으로 변경 필요
-
-# 이후 댓글 확인 및 자동 댓글 달기 로직 작성...
-# (여기에 이슈나 PR 댓글을 순회하고 Gemini로 답변을 생성해서 작성하는 코드가 들어갑니다)
 
 print("🔎 블로그에 새로 달린 댓글이 있는지 1시간 단위 클라우드 스캔 중입니다...")
 issues = repo.get_issues(state='open')
@@ -47,8 +48,11 @@ for issue in issues:
 방문자 댓글: "{user_comment}"
 """
             try:
-                # 제미나이 AI 호출 (빠르고 정확함)
-                response = model.generate_content(prompt)
+                # 제미나이 AI 호출 (새로운 google.genai 방식)
+                response = client.models.generate_content(
+                    model=model_id,
+                    contents=prompt
+                )
                 raw_reply = response.text.strip()
                 
                 reply_text = f"🤖 **AI 비서의 답변입니다:** \n\n{raw_reply}"
@@ -59,7 +63,6 @@ for issue in issues:
                 print("✅ 제미나이가 작성한 답글 달기 성공!")
             except Exception as e:
                 print(f"❌ 오류 발생: {e}")
-                import sys
                 sys.exit(1)
 
 if reply_count == 0:
