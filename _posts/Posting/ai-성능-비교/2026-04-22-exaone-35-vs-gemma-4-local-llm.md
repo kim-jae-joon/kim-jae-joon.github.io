@@ -76,12 +76,37 @@ RTX 4090의 광활한 24GB VRAM 덕분에 두 모델 모두 적당히 양자화(
 ### [참고] Open LLM 성능 벤치마크 비교표
 실제 사용감과 벤치마크가 얼마나 일치하는지 비교해 보는 것도 재미있습니다. (출처: Hugging Face Open LLM Leaderboard 및 각 모델 기술 문서 참고)
 
-| 평가 항목 | EXAONE 3.5 (32B) | Gemma 4 (31B) |
-| :--- | :--- | :--- |
-| **코딩 능력 (HumanEval)** | 78.4 | **82.1** |
-| **수학/논리 (MATH)** | 71.2 | **89.2** |
-| **지시 이행 (IFEval)** | 81.5 | **85.4** |
-| **한국어 이해도 (Ko-HellaSwag)** | **88.9** | 86.5 |
+<table>
+  <thead>
+    <tr>
+      <th>평가 항목</th>
+      <th>EXAONE 3.5 (32B)</th>
+      <th>Gemma 4 (31B)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>코딩 능력 (HumanEval)</strong></td>
+      <td>78.4</td>
+      <td><strong>82.1</strong></td>
+    </tr>
+    <tr>
+      <td><strong>수학/논리 (MATH)</strong></td>
+      <td>71.2</td>
+      <td><strong>89.2</strong></td>
+    </tr>
+    <tr>
+      <td><strong>지시 이행 (IFEval)</strong></td>
+      <td>81.5</td>
+      <td><strong>85.4</strong></td>
+    </tr>
+    <tr>
+      <td><strong>한국어 이해도 (Ko-HellaSwag)</strong></td>
+      <td><strong>88.9</strong></td>
+      <td>86.5</td>
+    </tr>
+  </tbody>
+</table>
 
 지표를 봐도 엑사원이 한국어 처리에 강점이 있다면, 젬마 4가 코딩과 논리적 추론(수학)에서 훨씬 더 깊이 있는 성능을 내는 것을 알 수 있습니다. 제 경험이 단순한 기분 탓이 아니었네요. ^^
 
