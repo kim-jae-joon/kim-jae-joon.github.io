@@ -62,27 +62,29 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; /* 가이드 선 */
   }
 
-  .toc a.active, 
-  .toc a.is-active,
-  .toc li.active > a,
-  .toc li.is-active > a,
-  .toc__menu a.active,
-  .toc__menu a.is-active {
-    background-color: rgba(130, 177, 255, 0.2) !important; /* 네온 블루 반투명 배경 */
-    background: rgba(130, 177, 255, 0.2) !important; /* 혹시 모를 background 속성도 덮어쓰기 */
-    color: #82b1ff !important; /* 선명한 하늘색 텍스트 */
+  /* ---------------------------------------------------
+     현재 읽고 있는 목차(Active) '초강력' 강제 덮어쓰기
+  --------------------------------------------------- */
+  /* 테마의 구체적인 깊이까지 파고들어서 하얀 배경 완벽 차단 */
+  .sidebar__right .toc .toc__menu li.active > a,
+  .sidebar__right .toc .toc__menu li.is-active > a,
+  .sidebar__right .toc .toc__menu a.active,
+  .sidebar__right .toc .toc__menu a.is-active {
+    background: rgba(130, 177, 255, 0.2) !important; /* 네온 블루 반투명 */
+    background-color: rgba(130, 177, 255, 0.2) !important; 
+    color: #82b1ff !important; /* 하늘색 텍스트 */
     font-weight: bold !important;
     border-left: 4px solid #82b1ff !important; /* 왼쪽 강조 선 */
   }
 
   /* 활성화된 상태에서 마우스 올렸을 때(Hover) 허옇게 변하는 현상 차단 */
-  .toc a.active:hover, 
-  .toc a.is-active:hover,
-  .toc__menu a.active:hover,
-  .toc__menu a.is-active:hover {
-    background-color: rgba(130, 177, 255, 0.3) !important; 
+  .sidebar__right .toc .toc__menu li.active > a:hover,
+  .sidebar__right .toc .toc__menu li.is-active > a:hover,
+  .sidebar__right .toc .toc__menu a.active:hover,
+  .sidebar__right .toc .toc__menu a.is-active:hover {
     background: rgba(130, 177, 255, 0.3) !important;
-    color: #ffffff !important;
+    background-color: rgba(130, 177, 255, 0.3) !important;
+    color: #ffffff !important; /* 완전한 흰색으로 반짝임 효과 */
   }
 
   /* 5. 인라인 코드 및 코드 블록 스타일 */
