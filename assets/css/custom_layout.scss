@@ -30,3 +30,23 @@
   font-size: 1.05em;
   color: #333;
 }
+
+/* assets/css/custom_layout.scss */
+body {
+  background-color: #050505; /* 깊은 우주 검정색 */
+  color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+/* 별들이 그려질 캔버스나 배경 레이어 */
+#galaxy-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 110%; /* 움직임을 위해 화면보다 살짝 크게 설정 */
+  height: 110%;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(circle at center, #111 0%, #050505 100%);
+  opacity: 0.6; /* 은은하게 조절 */
+}
