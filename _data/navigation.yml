@@ -8,7 +8,7 @@ main:
 
 category_nav:
   - title: "AI 강의"
-    url: "#" # 클릭 시 아무 동작 안 함 (혹은 /categories/ 지정 가능)
+    url: "/categories/#ai" # AI 카테고리 전체를 보여주도록 설정
     children:
       - title: "ㄴ Algorithm"
         url: /categories/#algorithm
@@ -20,10 +20,10 @@ category_nav:
         url: /categories/#rust
       - title: "ㄴ 파이썬"
         url: /categories/#파이썬
-  - title: "포스팅"
-    url: "#"
+  - title: "📝 포스팅"
+    url: "/categories/#posting" # 포스팅 카테고리 전체를 보여주도록 설정
     children:
-     - title: "ㄴ AI 성능 비교"
-       url: /categories/#ai-성능-비교  
-     - title: "ㄴ Development"
-       url: /categories/#development
+      - title: "ㄴ AI 성능 비교"
+        url: /categories/#ai-성능-비교
+      - title: "ㄴ Development"
+        url: /categories/#development
