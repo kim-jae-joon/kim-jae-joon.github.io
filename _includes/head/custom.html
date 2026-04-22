@@ -62,12 +62,27 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; /* 가이드 선 */
   }
 
-  /* 현재 읽고 있는 위치 하이라이트 (네온 블루) */
-  .toc .active {
-    background-color: rgba(130, 177, 255, 0.2) !important;
-    color: #82b1ff !important;
-    border-left: 3px solid #82b1ff !important;
+  .toc a.active, 
+  .toc a.is-active,
+  .toc li.active > a,
+  .toc li.is-active > a,
+  .toc__menu a.active,
+  .toc__menu a.is-active {
+    background-color: rgba(130, 177, 255, 0.2) !important; /* 네온 블루 반투명 배경 */
+    background: rgba(130, 177, 255, 0.2) !important; /* 혹시 모를 background 속성도 덮어쓰기 */
+    color: #82b1ff !important; /* 선명한 하늘색 텍스트 */
     font-weight: bold !important;
+    border-left: 4px solid #82b1ff !important; /* 왼쪽 강조 선 */
+  }
+
+  /* 활성화된 상태에서 마우스 올렸을 때(Hover) 허옇게 변하는 현상 차단 */
+  .toc a.active:hover, 
+  .toc a.is-active:hover,
+  .toc__menu a.active:hover,
+  .toc__menu a.is-active:hover {
+    background-color: rgba(130, 177, 255, 0.3) !important; 
+    background: rgba(130, 177, 255, 0.3) !important;
+    color: #ffffff !important;
   }
 
   /* 5. 인라인 코드 및 코드 블록 스타일 */
