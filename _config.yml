@@ -29,12 +29,14 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false # 좌측 프로필 숨김 처리
+      sidebar:
+        nav: "category_nav" # 방금 생성한 카테고리 네비게이션 연결
       read_time: true
       comments: true
       share: true
-      toc: true
-      toc_sticky: true
+      toc: true         # 우측 목차 (Table of Contents) 출력
+      toc_sticky: true  # 스크롤 시 우측 목차 고정
 
 # Footer
 footer:
