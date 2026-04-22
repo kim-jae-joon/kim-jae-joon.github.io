@@ -98,10 +98,18 @@
     background-color: rgba(255, 255, 255, 0.05) !important; /* 마우스 올렸을 때 살짝 밝아지는 효과 */
   }
   
-  /* 현재 스크롤 위치를 표시해주는 활성화된 글씨 색상 */
+  /* 현재 스크롤 위치를 표시해주는 활성화된 목차(Active) 스타일 최적화 */
   .toc .active {
-    color: #82b1ff !important; /* 스크롤 위치는 파란색으로 강조 */
+    background-color: rgba(130, 177, 255, 0.2) !important; /* 우주 테마에 어울리는 은은한 네온 블루 배경 */
+    color: #82b1ff !important; /* 눈에 확 띄는 밝은 하늘색 텍스트 */
     font-weight: bold !important;
+    border-left: 3px solid #82b1ff !important; /* 왼쪽에 살짝 파란색 포인트를 주어 현재 위치를 강조 */
+  }
+
+  /* 활성화된 목차에 마우스를 올렸을 때(Hover) 하얗게 변하는 것 방지 */
+  .toc .active:hover {
+    background-color: rgba(130, 177, 255, 0.3) !important; /* 배경을 살짝만 더 밝게 */
+    color: #ffffff !important; /* 글씨는 완전한 하얀색으로 */
   }
   /* 6. 인라인 코드(변수명, 함수명 등) 스타일 수정 */
   code, kbd, .highlighter-rouge {
