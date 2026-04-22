@@ -8,14 +8,14 @@ main:
 
 category_nav:
   - title: "AI 강의"
-    url: "/categories/#ai" # AI 카테고리 전체를 보여주도록 설정
+    url: "/categories/#ai"
     children:
       - title: "ㄴ Algorithm"
         url: /categories/#algorithm
       - title: "ㄴ C 언어"
-        url: /categories/#c-언어
+        url: /categories/#c-lang   # c-언어에서 변경
       - title: "ㄴ C#"
-        url: /categories/#c
+        url: /categories/#csharp   # c에서 변경
       - title: "ㄴ Rust"
         url: /categories/#rust
       - title: "ㄴ 파이썬"

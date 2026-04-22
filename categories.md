@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // 그룹 정의 (navigation.yml의 해시값과 매칭)
   const groups = {
-    'ai': ['algorithm', 'c-언어', 'c', 'rust', '파이썬'],
+    'ai': ['algorithm', 'c-lang', 'csharp', 'rust', '파이썬'],
     'posting': ['ai-성능-비교', 'development']
   };
 
