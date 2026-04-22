@@ -1,18 +1,73 @@
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8579023853703078"
-     crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8579023853703078" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="{{ '/assets/css/custom_layout.css' | relative_url }}">
+<style>
+  /* 우주 배경을 위한 전체 다크 테마 설정 */
+  body {
+    background-color: #050505 !important;
+    color: #e0e0e0 !important;
+  }
 
-<canvas id="galaxy-canvas"></canvas>
+  /* 기존 하얀색 배경들을 투명하게 또는 어둡게 덮어쓰기 */
+  .masthead, .sidebar, .page__right {
+    background-color: transparent !important;
+    border-color: #333 !important;
+  }
+
+  .top_logo_area {
+    background-color: transparent !important;
+    border-bottom: 1px solid #333 !important;
+  }
+  .top_logo_area h1 {
+    color: #fff !important;
+  }
+
+  /* 포스팅 본문 영역 (가독성을 위해 약간의 반투명 검은색 배경) */
+  .page__inner-wrap {
+    background-color: rgba(15, 15, 18, 0.8) !important;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  }
+
+  /* 글씨 색상 밝게 */
+  h1, h2, h3, h4, h5, h6, p, li, span, a {
+    color: #e0e0e0 !important;
+  }
+  a:hover { color: #5c9ce6 !important; }
+
+  /* 은하계 캔버스 고정 스타일 */
+  #galaxy-canvas {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: -100 !important; /* 모든 글 뒤로 배치 */
+    pointer-events: none !important;
+  }
+
+  /* --- 이전에 요청하신 글씨 30% 축소 적용 --- */
+  .page__inner-wrap, .entries-list {
+    font-size: 0.7em !important;
+    line-height: 1.8 !important;
+  }
+  .page__title { font-size: 2.2em !important; }
+  .page__content h1 { font-size: 1.8em !important; }
+  .page__content h2 { font-size: 1.5em !important; }
+  .page__content h3 { font-size: 1.3em !important; }
+</style>
+
 
 <script>
-(function() {
-  const canvas = document.getElementById('galaxy-canvas');
+document.addEventListener("DOMContentLoaded", function() {
+  // 에러를 방지하기 위해 <body> 안에 캔버스를 동적으로 생성합니다. (상단 공백 문제 해결!)
+  const canvas = document.createElement('canvas');
+  canvas.id = 'galaxy-canvas';
+  document.body.prepend(canvas); // body의 맨 처음에 삽입
+
   const ctx = canvas.getContext('2d');
   let stars = [];
   let mouseX = 0, mouseY = 0;
 
-  // 화면 크기에 맞게 조절
   function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -20,14 +75,14 @@
   window.addEventListener('resize', resize);
   resize();
 
-  // 별 생성 (은은하게 약 250개)
+  // 별 생성 (약 250개, 은은한 투명도)
   for (let i = 0; i < 250; i++) {
     stars.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       size: Math.random() * 1.5,
       opacity: Math.random() * 0.5,
-      parallaxK: Math.random() * 0.05 // 별마다 움직이는 속도 차이 (입체감)
+      parallaxK: Math.random() * 0.05
     });
   }
 
@@ -44,22 +99,5 @@
       ctx.beginPath();
       ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
       
-      // 마우스 움직임에 따른 좌표 이동 (Parallax)
       let targetX = star.x - (mouseX * star.parallaxK);
-      let targetY = star.y - (mouseY * star.parallaxK);
-      
-      // 화면 경계 처리 (무한 루프 느낌)
-      if (targetX < 0) targetX += canvas.width;
-      if (targetX > canvas.width) targetX -= canvas.width;
-      if (targetY < 0) targetY += canvas.height;
-      if (targetY > canvas.height) targetY -= canvas.height;
-
-      ctx.arc(targetX, targetY, star.size, 0, Math.PI * 2);
-      ctx.fill();
-    });
-    
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
-</script>
+      let targetY = star.y - (mouseY * star.parallaxK
