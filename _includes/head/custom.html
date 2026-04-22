@@ -58,6 +58,51 @@
     z-index: -999 !important; /* 모든 요소의 뒤쪽 */
     pointer-events: none !important;
   }
+
+  /* 5. 우측 목차(TOC) 투명도 및 하얀색 스타일 최적화 */
+  .toc {
+    background-color: rgba(0, 0, 0, 0.5) !important; /* 배경을 어둡고 투명하게 (우주 배경이 비침) */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important; /* 바깥쪽 테두리 하얀색 반투명 */
+    border-radius: 10px !important;
+    overflow: hidden; /* 둥근 모서리 밖으로 삐져나가는 것 방지 */
+  }
+  
+  /* 목차 상단 'On this page' 제목 부분 */
+  .toc .nav__title {
+    background-color: rgba(255, 255, 255, 0.1) !important; /* 제목칸만 살짝 밝은 반투명 */
+    color: #ffffff !important; /* 제목 글씨 완전 하얀색 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important; /* 제목 아래 하얀색 선 */
+    padding: 10px 15px !important;
+  }
+  
+  /* 목차 내부 리스트 (가이드 선) */
+  .toc ul {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .toc li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important; /* 항목 사이사이 얇은 하얀색 가이드선 */
+  }
+  .toc li:last-child {
+    border-bottom: none !important; /* 맨 마지막 줄은 선 제거 */
+  }
+  
+  /* 목차 글씨 색상 */
+  .toc a {
+    color: #d1d1d1 !important; /* 기본 글씨 하얀색(살짝 회색빛 도는 눈편한 흰색) */
+    padding: 8px 15px !important;
+    display: block;
+  }
+  .toc a:hover {
+    color: #ffffff !important; /* 마우스 올리면 완전 하얀색 */
+    background-color: rgba(255, 255, 255, 0.05) !important; /* 마우스 올렸을 때 살짝 밝아지는 효과 */
+  }
+  
+  /* 현재 스크롤 위치를 표시해주는 활성화된 글씨 색상 */
+  .toc .active {
+    color: #82b1ff !important; /* 스크롤 위치는 파란색으로 강조 */
+    font-weight: bold !important;
+  }
 </style>
 
 <script>
