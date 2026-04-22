@@ -1,9 +1,9 @@
 # _data/navigation.yml
 
 main:
-  - title: "🏠 홈"
+  - title: "홈"
     url: /
-  - title: "📂 주제별 강의 (카테고리)"
+  - title: "주제별 강의 (카테고리)"
     url: /categories/
 
 category_nav:
@@ -20,7 +20,7 @@ category_nav:
         url: /categories/#rust
       - title: "ㄴ 파이썬"
         url: /categories/#파이썬
-  - title: "📝 포스팅"
+  - title: "포스팅"
     url: "/categories/#posting" # 포스팅 카테고리 전체를 보여주도록 설정
     children:
       - title: "ㄴ AI 성능 비교"
