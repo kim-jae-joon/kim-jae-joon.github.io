@@ -3,6 +3,8 @@ layout: categories
 title: "전체 카테고리 목록"
 author_profile: false
 permalink: /categories/
+sidebar:
+  nav: "category_nav"
 ---
 
 <div id="empty-message" style="display: none; text-align: center; padding: 50px; color: #888;">
