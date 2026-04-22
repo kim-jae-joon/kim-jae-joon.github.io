@@ -2,3 +2,64 @@
      crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="{{ '/assets/css/custom_layout.css' | relative_url }}">
+
+<canvas id="galaxy-canvas"></canvas>
+
+<script>
+(function() {
+  const canvas = document.getElementById('galaxy-canvas');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+  let mouseX = 0, mouseY = 0;
+
+  // 화면 크기에 맞게 조절
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  // 별 생성 (은은하게 약 250개)
+  for (let i = 0; i < 250; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * 1.5,
+      opacity: Math.random() * 0.5,
+      parallaxK: Math.random() * 0.05 // 별마다 움직이는 속도 차이 (입체감)
+    });
+  }
+
+  // 마우스 위치 추적
+  window.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX - window.innerWidth / 2) * 0.5;
+    mouseY = (e.clientY - window.innerHeight / 2) * 0.5;
+  });
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    stars.forEach(star => {
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+      
+      // 마우스 움직임에 따른 좌표 이동 (Parallax)
+      let targetX = star.x - (mouseX * star.parallaxK);
+      let targetY = star.y - (mouseY * star.parallaxK);
+      
+      // 화면 경계 처리 (무한 루프 느낌)
+      if (targetX < 0) targetX += canvas.width;
+      if (targetX > canvas.width) targetX -= canvas.width;
+      if (targetY < 0) targetY += canvas.height;
+      if (targetY > canvas.height) targetY -= canvas.height;
+
+      ctx.arc(targetX, targetY, star.size, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
