@@ -24,6 +24,6 @@ category_nav:
     url: "#"
     children:
      - title: "ㄴ AI 성능 비교"
-       url: /categories/#AI_Comparison
+       url: /categories/#ai-성능-비교  
      - title: "ㄴ Development"
-       url: /categories/#Development
+       url: /categories/#development
