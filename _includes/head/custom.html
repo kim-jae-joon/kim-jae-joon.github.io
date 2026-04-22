@@ -1,61 +1,55 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8579023853703078" crossorigin="anonymous"></script>
 
 <style>
-  /* 1. 우주 배경을 위한 전체 레이아웃 설정 */
-  html, body {
-    background-color: #050505 !important;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* 모든 텍스트 색상을 밝은 회색/흰색으로 강제 고정 (검은 화면 방지) */
-  body, p, div, span, li, input, textarea {
-    color: #e0e0e0 !important;
-  }
-
-  /* 제목 및 링크 색상 설정 */
-  h1, h2, h3, h4, h5, h6, .site-title, .masthead__menu-item a, .sidebar a, .page__content a {
-    color: #ffffff !important;
-  }
-
-  /* 기존 테마의 흰색 배경들을 투명화하여 배경 별들이 보이게 함 */
-  .masthead, .page, .archive, .sidebar, .page__footer, .page__related, .page__inner-wrap, .entries-list {
-    background-color: transparent !important;
+  /* 1. 블로그의 모든 기본 배경을 강제로 '투명'하게 만듭니다. (하얀 띠 완벽 제거) */
+  html, body, #main, .initial-content, .page, .archive, 
+  .masthead, .masthead__inner-wrap, .greedy-nav, .top_logo_area,
+  .sidebar, .page__right, .page__footer, .page__related {
     background: transparent !important;
+    background-color: transparent !important;
     border: none !important;
+    box-shadow: none !important;
   }
 
-  /* 본문 영역 가독성을 위한 은은한 반투명 배경 */
+  /* 2. 모든 텍스트를 하얀색(밝은 회색)으로 고정하여 어두운 배경에서 잘 보이게 합니다. */
+  body, p, div, span, li, a, h1, h2, h3, h4, h5, h6, 
+  .site-title, .masthead__menu-item a, .sidebar a, 
+  .page__content a, .archive__item-title, .archive__item-excerpt, .archive__subtitle {
+    color: #eaeaea !important;
+  }
+  a:hover { color: #5c9ce6 !important; }
+
+  /* 3. 중앙 포스팅 영역 (요청하신 대로 글씨 축소 및 반투명 어두운 배경) */
   .page__inner-wrap {
-    background-color: rgba(255, 255, 255, 0.05) !important;
+    background-color: rgba(0, 0, 0, 0.6) !important; /* 본문 뒤를 살짝 어둡게 (별은 보임) */
     border-radius: 15px;
     padding: 30px !important;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  }
-
-  /* 2. 중앙 포스팅 영역 글씨 30% 축소 (요청 사항) */
-  .page__inner-wrap, .entries-list {
-    font-size: 0.75rem !important; /* 약 70~75% 크기 */
+    font-size: 0.8em !important; /* 글씨 크기 축소 */
     line-height: 1.8 !important;
   }
-  .page__title { font-size: 2rem !important; }
-  .archive__subtitle { font-size: 1.5rem !important; }
+  
+  /* 본문 내 제목 크기도 비율에 맞춰 축소 */
+  .page__title { font-size: 2em !important; }
+  .archive__subtitle { font-size: 1.5em !important; }
+  .page__content h1 { font-size: 1.7em !important; margin-top: 1.5em; }
+  .page__content h2 { font-size: 1.4em !important; margin-top: 1.3em; }
+  .page__content h3 { font-size: 1.2em !important; margin-top: 1.1em; }
 
-  /* 3. 은하계 캔버스 고정 (화면 전체 덮기) */
+  /* 4. 은하계 캔버스 고정 설정 */
   #galaxy-canvas {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
-    z-index: -9999 !important; /* 최하단 배치 */
-    pointer-events: none !important; /* 클릭 방해 금지 */
+    z-index: -999 !important; /* 모든 콘텐츠의 가장 뒤에 배치 */
+    pointer-events: none !important;
   }
 </style>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  // 캔버스를 body의 맨 처음에 강제로 삽입하여 구조적 문제 해결
+  // 캔버스 강제 삽입
   const canvas = document.createElement('canvas');
   canvas.id = 'galaxy-canvas';
   document.body.prepend(canvas);
@@ -71,14 +65,14 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener('resize', resize);
   resize();
 
-  // 별 생성 로직 (너무 밝지 않게 조절)
+  // 별 생성 (은은하게 잘 보이도록 크기와 투명도 상향 조정)
   for (let i = 0; i < 300; i++) {
     stars.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      size: Math.random() * 1.2,
-      opacity: Math.random() * 0.4,
-      parallaxK: Math.random() * 0.03
+      size: Math.random() * 1.5 + 0.5,     // 0.5 ~ 2.0 크기
+      opacity: Math.random() * 0.6 + 0.2,  // 0.2 ~ 0.8 투명도
+      parallaxK: Math.random() * 0.05      // 움직임 속도 차이 (입체감)
     });
   }
 
@@ -89,7 +83,12 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // [핵심] CSS 대신 캔버스 자체에 짙은 우주색(#050508) 배경을 칠합니다.
+    // 이렇게 하면 블로그 배경이 투명해졌을 때 이 우주가 선명하게 보입니다!
+    ctx.fillStyle = '#050508'; 
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // 별 그리기
     stars.forEach(star => {
       ctx.beginPath();
       ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
@@ -97,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
       let tx = star.x - (mouseX * star.parallaxK);
       let ty = star.y - (mouseY * star.parallaxK);
       
+      // 화면 밖으로 나가면 반대편에서 나타나게 무한 루프
       if (tx < 0) tx += canvas.width;
       if (tx > canvas.width) tx -= canvas.width;
       if (ty < 0) ty += canvas.height;
@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
       ctx.arc(tx, ty, star.size, 0, Math.PI * 2);
       ctx.fill();
     });
+    
     requestAnimationFrame(draw);
   }
   draw();
