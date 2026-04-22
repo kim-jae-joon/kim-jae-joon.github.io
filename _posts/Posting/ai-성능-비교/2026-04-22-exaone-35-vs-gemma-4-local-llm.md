@@ -76,34 +76,34 @@ RTX 4090의 광활한 24GB VRAM 덕분에 두 모델 모두 적당히 양자화(
 ### [참고] Open LLM 성능 벤치마크 비교표
 실제 사용감과 벤치마크가 얼마나 일치하는지 비교해 보는 것도 재미있습니다. (출처: Hugging Face Open LLM Leaderboard 및 각 모델 기술 문서 참고)
 
-<table>
-  <thead>
+<table style="width: 100%; border-collapse: collapse; text-align: left;">
+  <thead style="background-color: #333333; color: #ffffff;">
     <tr>
-      <th>평가 항목</th>
-      <th>EXAONE 3.5 (32B)</th>
-      <th>Gemma 4 (31B)</th>
+      <th style="padding: 10px; border-bottom: 2px solid #555;">평가 항목</th>
+      <th style="padding: 10px; border-bottom: 2px solid #555;">EXAONE 3.5 (32B)</th>
+      <th style="padding: 10px; border-bottom: 2px solid #555;">Gemma 4 (31B)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>코딩 능력 (HumanEval)</strong></td>
-      <td>78.4</td>
-      <td><strong>82.1</strong></td>
+      <td style="padding: 10px; border-bottom: 1px solid #444;"><strong>코딩 능력 (HumanEval)</strong></td>
+      <td style="padding: 10px; border-bottom: 1px solid #444;">78.4</td>
+      <td style="padding: 10px; border-bottom: 1px solid #444;"><strong>82.1</strong></td>
     </tr>
     <tr>
-      <td><strong>수학/논리 (MATH)</strong></td>
-      <td>71.2</td>
-      <td><strong>89.2</strong></td>
+      <td style="padding: 10px; border-bottom: 1px solid #444;"><strong>수학/논리 (MATH)</strong></td>
+      <td style="padding: 10px; border-bottom: 1px solid #444;">71.2</td>
+      <td style="padding: 10px; border-bottom: 1px solid #444;"><strong>89.2</strong></td>
     </tr>
     <tr>
-      <td><strong>지시 이행 (IFEval)</strong></td>
-      <td>81.5</td>
-      <td><strong>85.4</strong></td>
+      <td style="padding: 10px; border-bottom: 1px solid #444;"><strong>지시 이행 (IFEval)</strong></td>
+      <td style="padding: 10px; border-bottom: 1px solid #444;">81.5</td>
+      <td style="padding: 10px; border-bottom: 1px solid #444;"><strong>85.4</strong></td>
     </tr>
     <tr>
-      <td><strong>한국어 이해도 (Ko-HellaSwag)</strong></td>
-      <td><strong>88.9</strong></td>
-      <td>86.5</td>
+      <td style="padding: 10px; border-bottom: 1px solid #444;"><strong>한국어 이해도 (Ko-HellaSwag)</strong></td>
+      <td style="padding: 10px; border-bottom: 1px solid #444;"><strong>88.9</strong></td>
+      <td style="padding: 10px; border-bottom: 1px solid #444;">86.5</td>
     </tr>
   </tbody>
 </table>
