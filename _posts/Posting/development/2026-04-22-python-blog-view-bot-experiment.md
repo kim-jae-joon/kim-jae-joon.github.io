@@ -5,7 +5,7 @@ md_content = """---
 layout: single
 title: "[Python] 호기심에 만들어본 블로그 조회수 자동화 봇... 그리고 영구 삭제 후기"
 excerpt: "개발자의 직업병이 부른 일탈. 파이썬으로 구현해본 조회수 어뷰징의 원리와 위험성, 그리고 바로 폐기한 이유"
-categories: development
+category: development
 tags: [Python, Automation, WebScraping, Selenium, 어뷰징, 개발일상]
 sidebar:
   nav: "category_nav"
