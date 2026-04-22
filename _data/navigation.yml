@@ -20,3 +20,10 @@ category_nav:
         url: /categories/#rust
       - title: "ㄴ 파이썬"
         url: /categories/#파이썬
+  - title: "포스팅"
+    url: "#"
+    children:
+     - title: "ㄴ AI 성능 비교"
+       url: /categories/#AI_Comparison
+     - title: "ㄴ Development"
+       url: /categories/#Development
