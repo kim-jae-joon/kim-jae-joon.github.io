@@ -1,5 +1,12 @@
-main:
-  - title: "🏠 홈"
-    url: /
-  - title: "📂 주제별 강의 (카테고리)"
-    url: /categories/
+# 기존 main 네비게이션 아래에 추가
+category_nav:
+  - title: "Algorithm"
+    url: /categories/#algorithm
+  - title: "C 언어"
+    url: /categories/#c-언어
+  - title: "C#"
+    url: /categories/#c
+  - title: "Rust"
+    url: /categories/#rust
+  - title: "파이썬"
+    url: /categories/#파이썬
