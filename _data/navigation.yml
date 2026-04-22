@@ -1,3 +1,5 @@
+# _data/navigation.yml
+
 main:
   - title: "🏠 홈"
     url: /
@@ -5,15 +7,16 @@ main:
     url: /categories/
 
 category_nav:
-  - title: "AI"             # 새로 추가된 AI 카테고리
-    url: /categories/#ai
-  - title: "Algorithm"
-    url: /categories/#algorithm
-  - title: "C 언어"
-    url: /categories/#c-언어
-  - title: "C#"
-    url: /categories/#c
-  - title: "Rust"
-    url: /categories/#rust
-  - title: "파이썬"
-    url: /categories/#파이썬
+  - title: "🤖 AI 강의"
+    url: "#" # 클릭 시 아무 동작 안 함 (혹은 /categories/ 지정 가능)
+    children:
+      - title: "ㄴ Algorithm"
+        url: /categories/#algorithm
+      - title: "ㄴ C 언어"
+        url: /categories/#c-언어
+      - title: "ㄴ C#"
+        url: /categories/#c
+      - title: "ㄴ Rust"
+        url: /categories/#rust
+      - title: "ㄴ 파이썬"
+        url: /categories/#파이썬
