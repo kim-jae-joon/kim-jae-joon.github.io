@@ -54,3 +54,36 @@ body {
   z-index: -1; /* 모든 콘텐츠 뒤로 배치 */
   pointer-events: none; /* 클릭 방해 금지 */
 }
+
+/* ---------------------------------------------------
+   중앙 포스팅 본문 및 목록 글씨 크기 30% 축소
+--------------------------------------------------- */
+
+/* 전체 본문 영역 및 메인 화면 글 목록 크기 축소 */
+.page__inner-wrap,
+.entries-list {
+  font-size: 0.7em !important; /* 기본 크기의 70%로 축소 */
+  line-height: 1.7 !important; /* 글씨가 작아진 만큼 줄간격을 넓혀 가독성 확보 */
+}
+
+/* 본문 안의 제목(H1~H6)들도 본문 비율에 맞춰 일괄 축소 */
+.page__title {
+  font-size: 2.2em !important; /* 최상단 큰 제목 */
+}
+
+.page__content {
+  h1 { font-size: 1.8em !important; margin-top: 1.5em; }
+  h2 { font-size: 1.5em !important; margin-top: 1.3em; }
+  h3 { font-size: 1.3em !important; margin-top: 1.1em; }
+  h4 { font-size: 1.1em !important; }
+  
+  /* 본문 안의 코드 블록(검은 바탕 코드) 텍스트 크기 미세 조정 */
+  pre, code {
+    font-size: 0.95em !important; 
+  }
+}
+
+/* 메인 화면의 카테고리별 큰 제목 크기 조정 */
+.archive__subtitle {
+  font-size: 1.5em !important;
+}
