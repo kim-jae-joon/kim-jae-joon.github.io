@@ -1,5 +1,12 @@
-# 기존 main 네비게이션 아래에 추가
+main:
+  - title: "🏠 홈"
+    url: /
+  - title: "📂 주제별 강의 (카테고리)"
+    url: /categories/
+
 category_nav:
+  - title: "AI"             # 새로 추가된 AI 카테고리
+    url: /categories/#ai
   - title: "Algorithm"
     url: /categories/#algorithm
   - title: "C 언어"
