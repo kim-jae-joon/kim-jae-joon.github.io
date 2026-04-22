@@ -63,28 +63,37 @@
   }
 
   /* ---------------------------------------------------
-     현재 읽고 있는 목차(Active) '초강력' 강제 덮어쓰기
+     현재 읽고 있는 목차(Active) - 뼈대 하얀색 완벽 제거
   --------------------------------------------------- */
-  /* 테마의 구체적인 깊이까지 파고들어서 하얀 배경 완벽 차단 */
+  
+  /* 1. 숨어있는 뼈대(li)의 하얀색 배경을 강제로 투명하게 날려버립니다. */
+  .sidebar__right .toc li,
+  .sidebar__right .toc li.active,
+  .sidebar__right .toc li.is-active {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  /* 2. 글씨가 있는 링크(a)에만 네온 블루 효과를 적용합니다. */
   .sidebar__right .toc .toc__menu li.active > a,
   .sidebar__right .toc .toc__menu li.is-active > a,
   .sidebar__right .toc .toc__menu a.active,
   .sidebar__right .toc .toc__menu a.is-active {
-    background: rgba(130, 177, 255, 0.2) !important; /* 네온 블루 반투명 */
+    background: rgba(130, 177, 255, 0.2) !important; /* 이제 뒤에 하얀색이 없어서 파란빛이 영롱하게 돕니다 */
     background-color: rgba(130, 177, 255, 0.2) !important; 
-    color: #82b1ff !important; /* 하늘색 텍스트 */
+    color: #82b1ff !important;
     font-weight: bold !important;
-    border-left: 4px solid #82b1ff !important; /* 왼쪽 강조 선 */
+    border-left: 4px solid #82b1ff !important;
   }
 
-  /* 활성화된 상태에서 마우스 올렸을 때(Hover) 허옇게 변하는 현상 차단 */
+  /* 3. 마우스 올렸을 때(Hover) 하얗게 변하는 현상 차단 */
   .sidebar__right .toc .toc__menu li.active > a:hover,
   .sidebar__right .toc .toc__menu li.is-active > a:hover,
   .sidebar__right .toc .toc__menu a.active:hover,
   .sidebar__right .toc .toc__menu a.is-active:hover {
     background: rgba(130, 177, 255, 0.3) !important;
     background-color: rgba(130, 177, 255, 0.3) !important;
-    color: #ffffff !important; /* 완전한 흰색으로 반짝임 효과 */
+    color: #ffffff !important;
   }
 
   /* 5. 인라인 코드 및 코드 블록 스타일 */
