@@ -103,6 +103,28 @@
     color: #82b1ff !important; /* 스크롤 위치는 파란색으로 강조 */
     font-weight: bold !important;
   }
+  /* 6. 인라인 코드(변수명, 함수명 등) 스타일 수정 */
+  code, kbd, .highlighter-rouge {
+    background-color: rgba(255, 255, 255, 0.1) !important; /* 반투명한 어두운 배경 */
+    color: #ffcc80 !important; /* 눈에 띄는 살구색으로 포인트 강조 */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 4px !important;
+    padding: 2px 5px !important;
+    text-shadow: none !important;
+  }
+
+  /* 여러 줄짜리 검은색 코드 블록(pre) 배경 최적화 */
+  pre {
+    background-color: rgba(0, 0, 0, 0.6) !important; /* 더 짙은 검은색 반투명 */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  /* 여러 줄 코드 블록 내부의 글자색 복원 */
+  pre code {
+    background-color: transparent !important; /* 중복 배경 제거 */
+    color: #e0e0e0 !important; /* 기본 밝은 회색 */
+    border: none !important;
+  }
 </style>
 
 <script>
