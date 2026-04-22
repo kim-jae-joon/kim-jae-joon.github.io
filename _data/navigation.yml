@@ -11,19 +11,19 @@ category_nav:
     url: "/categories/#ai"
     children:
       - title: "ㄴ Algorithm"
-        url: /categories/#algorithm
+        url: "/categories/#algorithm"
       - title: "ㄴ C 언어"
-        url: /categories/#c-lang   # c-언어에서 변경
+        url: "/categories/#c-lang"
       - title: "ㄴ C#"
-        url: /categories/#csharp   # c에서 변경
+        url: "/categories/#csharp"
       - title: "ㄴ Rust"
-        url: /categories/#rust
+        url: "/categories/#rust"
       - title: "ㄴ 파이썬"
-        url: /categories/#파이썬
+        url: "/categories/#파이썬"
   - title: "포스팅"
-    url: "/categories/#posting" # 포스팅 카테고리 전체를 보여주도록 설정
+    url: "/categories/#posting"
     children:
       - title: "ㄴ AI 성능 비교"
-        url: /categories/#ai-성능-비교
+        url: "/categories/#ai-성능-비교"
       - title: "ㄴ Development"
-        url: /categories/#development
+        url: "/categories/#development"
