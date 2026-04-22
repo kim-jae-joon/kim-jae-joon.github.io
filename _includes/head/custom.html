@@ -2,6 +2,7 @@
 
 <style>
   /* 1. 전체 우주 다크 테마 및 배경 투명화 */
+  /* 모든 레이어의 흰색 배경을 투명하게 만들어 은하계 배경이 보이도록 합니다. */
   html, body, #main, .initial-content, .page, .archive, 
   .masthead, .masthead__inner-wrap, .greedy-nav, .top_logo_area,
   .sidebar, .page__right, .page__footer, .page__related,
@@ -13,67 +14,105 @@
   }
 
   body {
-    background-color: #050508 !important;
+    background-color: #050508 !important; /* 배경 생성 전 기본 색상 */
     color: #d1d1d1 !important;
-    font-size: 0.72rem !important; /* 기본 글씨 약 30% 축소 */
+    font-size: 0.72rem !important; /* 기본 글씨 크기에서 약 30% 축소 */
     line-height: 1.6 !important;
   }
 
-  /* 2. 텍스트 색상 및 강조 (하얀색 계열) */
+  /* 2. 텍스트 색상 및 가독성 확보 */
   p, div, span, li, a, h1, h2, h3, h4, h5, h6, 
   .site-title, .masthead__menu-item a, .sidebar a, 
   .page__content a, .archive__item-title, .archive__item-excerpt, .archive__subtitle {
     color: #e5e5e5 !important;
   }
-  a:hover { color: #82b1ff !important; }
+  
+  /* 링크에 마우스를 올렸을 때의 색상 */
+  a:hover { color: #82b1ff !important; text-decoration: none !important; }
 
-  /* 3. 본문 영역 디자인 (반투명 블랙) */
+  /* 3. 본문 포스팅 영역 디자인 (반투명 블랙) */
   .page__inner-wrap {
-    background-color: rgba(0, 0, 0, 0.7) !important;
+    background-color: rgba(0, 0, 0, 0.7) !important; /* 본문 뒤를 어둡게 하여 가독성 높임 */
     border-radius: 12px;
     padding: 25px !important;
     margin-bottom: 20px !important;
   }
+
+  /* 제목 크기 비율 조정 */
   .page__title { font-size: 1.6em !important; }
   .page__content h1 { font-size: 1.4em !important; }
   .page__content h2 { font-size: 1.25em !important; }
   .page__content h3 { font-size: 1.1em !important; }
 
-  /* 4. 우측 목차(TOC) & 인라인 코드 스타일 */
+  /* 4. 우측 목차(TOC) 스타일 최적화 */
   .toc {
-    background-color: rgba(0, 0, 0, 0.5) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    background-color: rgba(0, 0, 0, 0.5) !important; /* 반투명 어두운 배경 */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important; /* 하얀색 반투명 테두리 */
     border-radius: 8px;
+    padding: 0 !important;
   }
+
+  .toc .nav__title {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+  }
+
+  .toc li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; /* 가이드 선 */
+  }
+
+  /* 현재 읽고 있는 위치 하이라이트 (네온 블루) */
   .toc .active {
     background-color: rgba(130, 177, 255, 0.2) !important;
     color: #82b1ff !important;
     border-left: 3px solid #82b1ff !important;
+    font-weight: bold !important;
   }
+
+  /* 5. 인라인 코드 및 코드 블록 스타일 */
   code, .highlighter-rouge {
     background-color: rgba(255, 255, 255, 0.1) !important;
-    color: #ffcc80 !important; /* 살구색 강조 */
+    color: #ffcc80 !important; /* 눈에 띄는 살구색 포인트 */
     padding: 2px 5px !important;
     border-radius: 4px;
   }
 
-  /* 5. 은하계 캔버스 레이아웃 */
+  pre {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  pre code {
+    background-color: transparent !important;
+    color: #e0e0e0 !important;
+  }
+
+  /* 6. 은하계 캔버스 고정 */
   #galaxy-canvas {
     position: fixed !important;
-    top: 0; left: 0; width: 100vw; height: 100vh;
-    z-index: -999; pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -9999; /* 모든 콘텐츠 최하단 */
+    pointer-events: none; /* 클릭 방해 금지 */
   }
 </style>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+  // 상단 공백 방지를 위해 캔버스를 body 맨 앞에 동적 생성
   if (!document.getElementById('galaxy-canvas')) {
     const canvas = document.createElement('canvas');
     canvas.id = 'galaxy-canvas';
     document.body.prepend(canvas);
-    const ctx = canvas.getContext('2d');
-    let stars = [], mouseX = 0, mouseY = 0;
 
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+    let mouseX = 0, mouseY = 0;
+
+    // 화면 리사이즈 대응
     function resize() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -81,31 +120,41 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('resize', resize);
     resize();
 
+    // 은은한 별 생성 (약 350개)
     for (let i = 0; i < 350; i++) {
       stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         size: Math.random() * 1.3,
         opacity: Math.random() * 0.5 + 0.2,
-        parallaxK: Math.random() * 0.04
+        parallaxK: Math.random() * 0.04 // 별마다 움직이는 강도 다름
       });
     }
 
+    // 마우스 움직임 추적 (Parallax 효과)
     window.addEventListener('mousemove', (e) => {
       mouseX = (e.clientX - window.innerWidth / 2);
       mouseY = (e.clientY - window.innerHeight / 2);
     });
 
     function draw() {
+      // 캔버스 자체에 우주 배경색 칠하기
       ctx.fillStyle = '#050508';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
       stars.forEach(star => {
         ctx.beginPath();
         ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+        
         let tx = star.x - (mouseX * star.parallaxK);
         let ty = star.y - (mouseY * star.parallaxK);
-        if (tx < 0) tx += canvas.width; if (tx > canvas.width) tx -= canvas.width;
-        if (ty < 0) ty += canvas.height; if (ty > canvas.height) ty -= canvas.height;
+        
+        // 화면 경계 루프 처리
+        if (tx < 0) tx += canvas.width;
+        if (tx > canvas.width) tx -= canvas.width;
+        if (ty < 0) ty += canvas.height;
+        if (ty > canvas.height) ty -= canvas.height;
+
         ctx.arc(tx, ty, star.size, 0, Math.PI * 2);
         ctx.fill();
       });
