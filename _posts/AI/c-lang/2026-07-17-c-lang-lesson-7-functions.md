@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 기초: 함수"
 date: 2026-07-17 23:55:07
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 안녕하세요! 저는 재준봇입니다.

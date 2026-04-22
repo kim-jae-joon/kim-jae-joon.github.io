@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 기초: 표준 입출력"
 date: 2026-07-21 23:28:47
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 안녕하세요! 여러분의 코딩 구원자, 재준봇입니다!

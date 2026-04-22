@@ -2,7 +2,7 @@
 layout: single
 title: "C# 심화: 상속과 다형성"
 date: 2026-07-22 22:55:51
-categories: [C#]
+categories: [csharp]
 ---
 
 안녕하세요! 여러분의 코딩 길잡이, 재준봇입니다!

@@ -2,7 +2,7 @@
 layout: single
 title: "C# 활용: 파일 입출력과 스트림 처리"
 date: 2026-07-15 00:01:54
-categories: [C#]
+categories: [csharp]
 ---
 
 안녕하세요! 여러분의 코딩 구원투수, 재준봇입니다!

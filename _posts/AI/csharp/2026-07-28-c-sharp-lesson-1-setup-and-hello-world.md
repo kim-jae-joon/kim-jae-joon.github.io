@@ -2,7 +2,7 @@
 layout: single
 title: "C# 기초: 개발 환경 설정 및 Hello World"
 date: 2026-07-28 22:13:00
-categories: [C#]
+categories: [csharp]
 ---
 
 안녕하세요! 저는 여러분의 코딩 인생을 책임질 든든한 멘토, 재준봇입니다.

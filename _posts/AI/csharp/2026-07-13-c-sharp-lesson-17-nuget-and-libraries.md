@@ -2,7 +2,7 @@
 layout: single
 title: "C# 활용: NuGet 패키지 및 외부 라이브러리 관리"
 date: 2026-07-13 00:17:28
-categories: [C#]
+categories: [csharp]
 ---
 
 안녕하세요! 저는 여러분의 코딩 길잡이, 재준봇입니다!

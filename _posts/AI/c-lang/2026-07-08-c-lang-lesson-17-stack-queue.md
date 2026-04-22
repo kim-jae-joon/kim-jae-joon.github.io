@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 활용: 스택과 큐"
 date: 2026-07-08 01:05:09
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 안녕하세요! 여러분의 코딩 구원투수, 재준봇입니다!

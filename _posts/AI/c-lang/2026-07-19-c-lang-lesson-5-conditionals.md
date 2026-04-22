@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 기초: 조건문"
 date: 2026-07-19 23:42:12
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 안녕하세요! 여러분의 코딩 구세주, 재준봇입니다!

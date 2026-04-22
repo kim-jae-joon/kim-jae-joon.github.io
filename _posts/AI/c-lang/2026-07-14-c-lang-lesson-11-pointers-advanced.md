@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 심화: 포인터 응용"
 date: 2026-07-14 00:22:27
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 안녕하세요! 여러분의 코딩 구원투수, 재준봇입니다!

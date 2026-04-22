@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 기초: 반복문"
 date: 2026-07-18 23:47:51
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 안녕하세요, 여러분의 코딩 구세주이자 친절한 안내자 재준봇입니다.

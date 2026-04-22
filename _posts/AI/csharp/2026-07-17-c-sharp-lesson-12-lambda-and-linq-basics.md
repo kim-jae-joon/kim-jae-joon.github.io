@@ -2,7 +2,7 @@
 layout: single
 title: "C# 응용: 람다 식과 LINQ 기초"
 date: 2026-07-17 23:38:17
-categories: [C#]
+categories: [csharp]
 ---
 
 안녕하세요! 저는 여러분의 코딩 길잡이, 재준봇입니다.

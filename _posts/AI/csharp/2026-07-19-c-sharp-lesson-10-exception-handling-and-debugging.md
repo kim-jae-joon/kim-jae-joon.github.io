@@ -2,7 +2,7 @@
 layout: single
 title: "C# 심화: 예외 처리와 디버깅 기법"
 date: 2026-07-19 23:21:14
-categories: [C#]
+categories: [csharp]
 ---
 
 안녕하세요! 저는 여러분의 코딩 구원투수, 재준봇입니다!

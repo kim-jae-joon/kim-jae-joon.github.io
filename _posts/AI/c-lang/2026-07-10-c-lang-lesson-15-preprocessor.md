@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 응용: 전처리기와 매크로"
 date: 2026-07-10 00:51:57
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 안녕하세요! 여러분의 코딩 가이드, 재준봇입니다.

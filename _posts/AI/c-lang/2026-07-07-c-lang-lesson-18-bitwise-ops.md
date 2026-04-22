@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 활용: 비트 연산과 마스킹"
 date: 2026-07-07 01:13:47
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 반가워요! 여러분의 코딩 구원투수, 재준봇입니다!

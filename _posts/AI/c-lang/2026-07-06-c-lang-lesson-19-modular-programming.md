@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 실전: 모듈화 및 분할 컴파일"
 date: 2026-07-06 01:22:27
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 안녕하세요! 여러분의 코딩 구원투수, 재준봇입니다!

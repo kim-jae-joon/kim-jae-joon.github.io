@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 실전: 종합 프로젝트 2 (데이터 구조 구현)"
 date: 2026-07-04 01:37:26
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 안녕하세요! 여러분의 코딩 구원투수, 재준봇입니다!

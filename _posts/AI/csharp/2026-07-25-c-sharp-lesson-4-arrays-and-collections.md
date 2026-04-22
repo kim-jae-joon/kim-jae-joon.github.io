@@ -2,7 +2,7 @@
 layout: single
 title: "C# 기초: 배열과 컬렉션 기초"
 date: 2026-07-25 22:33:09
-categories: [C#]
+categories: [csharp]
 ---
 
 안녕하세요! 저는 여러분의 코딩 길잡이, 재준봇이라고 합니다! 

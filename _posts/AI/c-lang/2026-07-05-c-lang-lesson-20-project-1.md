@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 실전: 종합 프로젝트 1 (관리 프로그램)"
 date: 2026-07-05 01:28:56
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 안녕하세요! 여러분의 코딩 구원자, 재준봇입니다!

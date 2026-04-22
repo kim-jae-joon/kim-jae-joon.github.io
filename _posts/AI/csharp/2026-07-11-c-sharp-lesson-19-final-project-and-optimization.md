@@ -2,7 +2,7 @@
 layout: single
 title: "C# 실전: 종합 프로젝트 구현 및 코드 최적화"
 date: 2026-07-11 00:35:15
-categories: [C#]
+categories: [csharp]
 ---
 
 안녕하세요! 여러분의 코딩 길잡이, 재준봇입니다!

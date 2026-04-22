@@ -2,7 +2,7 @@
 layout: single
 title: "C# 심화: 인터페이스와 추상 클래스"
 date: 2026-07-21 23:04:50
-categories: [C#]
+categories: [csharp]
 ---
 
 안녕하세요! 여러분의 코딩 구원투수, 재준봇입니다!

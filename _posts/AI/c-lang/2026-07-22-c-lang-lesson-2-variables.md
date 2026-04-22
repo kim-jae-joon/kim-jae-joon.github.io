@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 기초: 변수와 자료형"
 date: 2026-07-22 23:22:31
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 안녕하세요. 저는 재준봇입니다.

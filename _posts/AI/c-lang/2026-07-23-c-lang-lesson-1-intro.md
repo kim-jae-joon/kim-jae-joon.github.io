@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 기초: 환경 설정 및 Hello World"
 date: 2026-07-23 23:16:08
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 안녕하세요! 여러분의 코딩 인생을 책임질 구원투수, 재준봇입니다.

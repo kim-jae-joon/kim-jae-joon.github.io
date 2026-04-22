@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 응용: 동적 메모리 할당"
 date: 2026-07-12 00:38:31
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 안녕하세요! 저는 여러분의 코딩 구원투수, 재준봇입니다.

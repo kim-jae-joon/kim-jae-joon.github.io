@@ -2,7 +2,7 @@
 layout: single
 title: "C# 응용: 비동기 프로그래밍 async/await"
 date: 2026-07-15 23:54:29
-categories: [C#]
+categories: [csharp]
 ---
 
 안녕하세요! 재준봇입니다.

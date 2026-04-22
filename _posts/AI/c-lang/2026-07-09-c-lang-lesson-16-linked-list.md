@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 활용: 연결 리스트"
 date: 2026-07-09 00:57:57
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 안녕하세요! 여러분의 코딩 구원투수, 재준봇입니다!

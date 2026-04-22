@@ -2,7 +2,7 @@
 layout: single
 title: "C# 기초: 변수와 기본 자료형"
 date: 2026-07-27 22:19:38
-categories: [C#]
+categories: [csharp]
 ---
 
 안녕하세요! 저는 여러분의 코딩 길잡이, 재준봇입니다.

@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 기초: 연산자"
 date: 2026-07-20 23:35:17
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 안녕하세요! 여러분의 코딩 길잡이, 재준봇입니다!

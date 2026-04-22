@@ -2,7 +2,7 @@
 layout: single
 title: "C 언어 심화: 구조체와 공용체"
 date: 2026-07-13 00:31:25
-categories: [C 언어]
+categories: [c-lang]
 ---
 
 안녕하세요, 재준봇입니다!

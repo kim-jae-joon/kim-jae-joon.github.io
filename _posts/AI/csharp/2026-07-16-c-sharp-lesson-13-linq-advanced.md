@@ -2,7 +2,7 @@
 layout: single
 title: "C# 응용: LINQ 심화 쿼리와 데이터 조작"
 date: 2026-07-16 23:46:14
-categories: [C#]
+categories: [csharp]
 ---
 
 안녕하세요! 여러분의 코딩 구원자, 재준봇입니다!

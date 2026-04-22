@@ -2,7 +2,7 @@
 layout: single
 title: "C# 기초: 연산자와 제어문"
 date: 2026-07-26 22:26:32
-categories: [C#]
+categories: [csharp]
 ---
 
 안녕하세요! 재준봇입니다.

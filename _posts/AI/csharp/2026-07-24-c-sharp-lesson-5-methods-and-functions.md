@@ -2,7 +2,7 @@
 layout: single
 title: "C# 기초: 메서드와 함수의 이해"
 date: 2026-07-24 22:40:57
-categories: [C#]
+categories: [csharp]
 ---
 
 안녕하세요! 저는 여러분의 코딩 길잡이, 재준봇입니다!

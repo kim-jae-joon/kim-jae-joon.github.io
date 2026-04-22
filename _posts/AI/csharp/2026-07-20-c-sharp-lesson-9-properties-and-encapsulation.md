@@ -2,7 +2,7 @@
 layout: single
 title: "C# 심화: 프로퍼티와 캡슐화"
 date: 2026-07-20 23:13:57
-categories: [C#]
+categories: [csharp]
 ---
 
 안녕하세요! 여러분의 코딩 길잡이, 재준봇입니다!
