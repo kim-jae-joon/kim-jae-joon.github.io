@@ -31,22 +31,26 @@
   color: #333;
 }
 
-/* assets/css/custom_layout.scss */
+/* 배경색을 우주 느낌의 깊은 검정색으로 변경 */
 body {
-  background-color: #050505; /* 깊은 우주 검정색 */
+  background-color: #050505 !important;
   color: #e0e0e0;
-  overflow-x: hidden;
 }
 
-/* 별들이 그려질 캔버스나 배경 레이어 */
-#galaxy-bg {
+/* 포스팅 영역 배경을 약간 투명하게 하여 별들이 비치도록 설정 */
+.page__inner-wrap {
+  background-color: rgba(255, 255, 255, 0.03); /* 아주 살짝 밝게 */
+  border-radius: 10px;
+  backdrop-filter: blur(2px); /* 본문 뒤로 별들이 살짝 흐릿하게 보임 */
+}
+
+/* 은하계 캔버스 위치 고정 */
+#galaxy-canvas {
   position: fixed;
   top: 0;
   left: 0;
-  width: 110%; /* 움직임을 위해 화면보다 살짝 크게 설정 */
-  height: 110%;
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(circle at center, #111 0%, #050505 100%);
-  opacity: 0.6; /* 은은하게 조절 */
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* 모든 콘텐츠 뒤로 배치 */
+  pointer-events: none; /* 클릭 방해 금지 */
 }
