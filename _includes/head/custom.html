@@ -1,7 +1,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8579023853703078" crossorigin="anonymous"></script>
 
 <style>
-  /* 1. 블로그 전체 배경 투명화 및 하얀 띠 완벽 제거 */
+  /* 1. 전체 우주 다크 테마 및 배경 투명화 */
   html, body, #main, .initial-content, .page, .archive, 
   .masthead, .masthead__inner-wrap, .greedy-nav, .top_logo_area,
   .sidebar, .page__right, .page__footer, .page__related,
@@ -12,129 +12,67 @@
     box-shadow: none !important;
   }
 
-  /* 2. 전역 텍스트 색상 및 글씨 크기 대폭 축소 (30% 이상 축소) */
   body {
-    background-color: #050508 !important; /* 배경이 늦게 뜰 때를 대비한 기본 우주색 */
+    background-color: #050508 !important;
     color: #d1d1d1 !important;
-    font-size: 0.75rem !important; /* 전체 글씨 기본 크기 축소 */
+    font-size: 0.72rem !important; /* 기본 글씨 약 30% 축소 */
     line-height: 1.6 !important;
   }
 
-  /* 모든 텍스트 요소를 밝은 색으로 고정 */
+  /* 2. 텍스트 색상 및 강조 (하얀색 계열) */
   p, div, span, li, a, h1, h2, h3, h4, h5, h6, 
   .site-title, .masthead__menu-item a, .sidebar a, 
   .page__content a, .archive__item-title, .archive__item-excerpt, .archive__subtitle {
     color: #e5e5e5 !important;
   }
-  
-  /* 링크 강조색 */
-  a:hover { color: #82b1ff !important; font-weight: bold; }
+  a:hover { color: #82b1ff !important; }
 
-  /* 3. 포스팅 본문 영역 최적화 (글씨 크기 및 반투명 배경) */
+  /* 3. 본문 영역 디자인 (반투명 블랙) */
   .page__inner-wrap {
-    background-color: rgba(0, 0, 0, 0.65) !important; /* 본문 가독성을 위해 어둡고 투명하게 */
+    background-color: rgba(0, 0, 0, 0.7) !important;
     border-radius: 12px;
     padding: 25px !important;
     margin-bottom: 20px !important;
   }
-
-  /* 제목 크기 세밀 조정 (너무 크지 않게) */
-  .page__title { font-size: 1.7em !important; margin-bottom: 0.5em !important; }
-  .archive__subtitle { font-size: 1.3em !important; }
-  .page__content h1 { font-size: 1.5em !important; }
-  .page__content h2 { font-size: 1.3em !important; }
+  .page__title { font-size: 1.6em !important; }
+  .page__content h1 { font-size: 1.4em !important; }
+  .page__content h2 { font-size: 1.25em !important; }
   .page__content h3 { font-size: 1.1em !important; }
-  
-  /* 사이드바 메뉴 글씨도 작게 */
-  .sidebar .nav__list { font-size: 0.9em !important; }
 
-  /* 4. 은하계 캔버스 레이아웃 고정 */
+  /* 4. 우측 목차(TOC) & 인라인 코드 스타일 */
+  .toc {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 8px;
+  }
+  .toc .active {
+    background-color: rgba(130, 177, 255, 0.2) !important;
+    color: #82b1ff !important;
+    border-left: 3px solid #82b1ff !important;
+  }
+  code, .highlighter-rouge {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffcc80 !important; /* 살구색 강조 */
+    padding: 2px 5px !important;
+    border-radius: 4px;
+  }
+
+  /* 5. 은하계 캔버스 레이아웃 */
   #galaxy-canvas {
     position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    z-index: -999 !important; /* 모든 요소의 뒤쪽 */
-    pointer-events: none !important;
-  }
-
-  /* 5. 우측 목차(TOC) 투명도 및 하얀색 스타일 최적화 */
-  .toc {
-    background-color: rgba(0, 0, 0, 0.5) !important; /* 배경을 어둡고 투명하게 (우주 배경이 비침) */
-    border: 1px solid rgba(255, 255, 255, 0.2) !important; /* 바깥쪽 테두리 하얀색 반투명 */
-    border-radius: 10px !important;
-    overflow: hidden; /* 둥근 모서리 밖으로 삐져나가는 것 방지 */
-  }
-  
-  /* 목차 상단 'On this page' 제목 부분 */
-  .toc .nav__title {
-    background-color: rgba(255, 255, 255, 0.1) !important; /* 제목칸만 살짝 밝은 반투명 */
-    color: #ffffff !important; /* 제목 글씨 완전 하얀색 */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important; /* 제목 아래 하얀색 선 */
-    padding: 10px 15px !important;
-  }
-  
-  /* 목차 내부 리스트 (가이드 선) */
-  .toc ul {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  .toc li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important; /* 항목 사이사이 얇은 하얀색 가이드선 */
-  }
-  .toc li:last-child {
-    border-bottom: none !important; /* 맨 마지막 줄은 선 제거 */
-  }
-  
-  /* 현재 스크롤 위치를 표시해주는 활성화된 목차(Active) 스타일 최적화 */
-  .toc .active {
-    background-color: rgba(130, 177, 255, 0.2) !important; /* 우주 테마에 어울리는 은은한 네온 블루 배경 */
-    color: #82b1ff !important; /* 눈에 확 띄는 밝은 하늘색 텍스트 */
-    font-weight: bold !important;
-    border-left: 3px solid #82b1ff !important; /* 왼쪽에 살짝 파란색 포인트를 주어 현재 위치를 강조 */
-  }
-
-  /* 활성화된 목차에 마우스를 올렸을 때(Hover) 하얗게 변하는 것 방지 */
-  .toc .active:hover {
-    background-color: rgba(130, 177, 255, 0.3) !important; /* 배경을 살짝만 더 밝게 */
-    color: #ffffff !important; /* 글씨는 완전한 하얀색으로 */
-  }
-  /* 6. 인라인 코드(변수명, 함수명 등) 스타일 수정 */
-  code, kbd, .highlighter-rouge {
-    background-color: rgba(255, 255, 255, 0.1) !important; /* 반투명한 어두운 배경 */
-    color: #ffcc80 !important; /* 눈에 띄는 살구색으로 포인트 강조 */
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-radius: 4px !important;
-    padding: 2px 5px !important;
-    text-shadow: none !important;
-  }
-
-  /* 여러 줄짜리 검은색 코드 블록(pre) 배경 최적화 */
-  pre {
-    background-color: rgba(0, 0, 0, 0.6) !important; /* 더 짙은 검은색 반투명 */
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  }
-  
-  /* 여러 줄 코드 블록 내부의 글자색 복원 */
-  pre code {
-    background-color: transparent !important; /* 중복 배경 제거 */
-    color: #e0e0e0 !important; /* 기본 밝은 회색 */
-    border: none !important;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: -999; pointer-events: none;
   }
 </style>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  // 블로그 본문에 배경 캔버스 강제 삽입
   if (!document.getElementById('galaxy-canvas')) {
     const canvas = document.createElement('canvas');
     canvas.id = 'galaxy-canvas';
     document.body.prepend(canvas);
-
     const ctx = canvas.getContext('2d');
-    let stars = [];
-    let mouseX = 0, mouseY = 0;
+    let stars = [], mouseX = 0, mouseY = 0;
 
     function resize() {
       canvas.width = window.innerWidth;
@@ -143,41 +81,31 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('resize', resize);
     resize();
 
-    // 별 생성 (약 350개, 은은하고 작은 크기들)
     for (let i = 0; i < 350; i++) {
       stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 1.2 + 0.3,
+        size: Math.random() * 1.3,
         opacity: Math.random() * 0.5 + 0.2,
         parallaxK: Math.random() * 0.04
       });
     }
 
-    // 마우스 움직임 감지 (부드러운 움직임 효과)
     window.addEventListener('mousemove', (e) => {
       mouseX = (e.clientX - window.innerWidth / 2);
       mouseY = (e.clientY - window.innerHeight / 2);
     });
 
     function draw() {
-      // 캔버스에 직접 깊은 우주 배경색 칠하기
       ctx.fillStyle = '#050508';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
       stars.forEach(star => {
         ctx.beginPath();
         ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
-        
         let tx = star.x - (mouseX * star.parallaxK);
         let ty = star.y - (mouseY * star.parallaxK);
-        
-        // 화면 밖 무한 루프
-        if (tx < 0) tx += canvas.width;
-        if (tx > canvas.width) tx -= canvas.width;
-        if (ty < 0) ty += canvas.height;
-        if (ty > canvas.height) ty -= canvas.height;
-
+        if (tx < 0) tx += canvas.width; if (tx > canvas.width) tx -= canvas.width;
+        if (ty < 0) ty += canvas.height; if (ty > canvas.height) ty -= canvas.height;
         ctx.arc(tx, ty, star.size, 0, Math.PI * 2);
         ctx.fill();
       });
