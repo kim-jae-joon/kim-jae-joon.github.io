@@ -55,5 +55,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
   filter();
   window.addEventListener('hashchange', filter);
+  
+  // Minimal Mistakes의 Smooth Scroll이 hashchange 이벤트를 씹는 현상 방지
+  document.querySelectorAll('.sidebar a, .nav__list a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (link.hash) {
+        window.location.hash = link.hash;
+        filter();
+      }
+    });
+  });
 });
 </script>
