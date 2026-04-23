@@ -150,6 +150,16 @@ document.addEventListener("DOMContentLoaded", function() {
     let stars = [];
     let mouseX = 0, mouseY = 0;
 
+    // 🌟 실제 별의 표면 온도에 따른 다채로운 색상 배열 (R, G, B 형식)
+    const starColors = [
+      '255, 255, 255', // 백색 (시리우스)
+      '130, 177, 255', // 청백색 (가장 뜨거운 별)
+      '179, 229, 252', // 옅은 푸른색
+      '255, 245, 157', // 황백색 (우리 태양)
+      '255, 204, 128', // 주황색
+      '239, 154, 154'  // 적색 (차가운 별, 베텔게우스)
+    ];
+
     // 화면 리사이즈 대응
     function resize() {
       canvas.width = window.innerWidth;
@@ -165,7 +175,9 @@ document.addEventListener("DOMContentLoaded", function() {
         y: Math.random() * canvas.height,
         size: Math.random() * 1.3,
         opacity: Math.random() * 0.5 + 0.2,
-        parallaxK: Math.random() * 0.04 // 별마다 움직이는 강도 다름
+        parallaxK: Math.random() * 0.04,
+        // 🌟 배열에서 랜덤으로 별의 색상 하나를 선택해 부여
+        color: starColors[Math.floor(Math.random() * starColors.length)]
       });
     }
 
@@ -182,7 +194,13 @@ document.addEventListener("DOMContentLoaded", function() {
       
       stars.forEach(star => {
         ctx.beginPath();
-        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+        
+        // 🌟 할당된 색상과 투명도를 적용
+        ctx.fillStyle = `rgba(${star.color}, ${star.opacity})`;
+        
+        // 🌟 별 주변에 은은한 빛 번짐(Glow) 효과 추가
+        ctx.shadowBlur = star.size * 2;
+        ctx.shadowColor = `rgba(${star.color}, ${star.opacity})`;
         
         let tx = star.x - (mouseX * star.parallaxK);
         let ty = star.y - (mouseY * star.parallaxK);
