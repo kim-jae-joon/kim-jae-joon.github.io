@@ -1,0 +1,20 @@
+{% include author-profile.html %}
+
+{% if page.sidebar %}
+  {% for nav in page.sidebar %}
+    {% if nav.nav %}
+      {% include nav_list id=nav.nav %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<div class="sidebar__visitor-counter" style="margin-top: 30px; text-align: center; padding: 10px; border-top: 1px solid rgba(255,255,255,0.1);">
+  <p style="font-size: 0.8em; color: #82b1ff; margin-bottom: 10px; font-weight: bold; letter-spacing: 1px;">
+    VISITOR STATS
+  </p>
+  <a href="https://hits.seeyoufarm.com">
+    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fkim-jae-joon.github.io&count_bg=%2300E5FF&title_bg=%23222222&icon=opsgenie.svg&icon_color=%2300E5FF&title=VIEWS&edge_flat=false" 
+         alt="Hits" 
+         style="filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.5));" />
+  </a>
+</div>
