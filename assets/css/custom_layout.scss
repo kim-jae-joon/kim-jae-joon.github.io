@@ -103,3 +103,14 @@ body {
     }
   }
 }
+/* 사이드바 글씨 색상 강제 지정 */
+.sidebar {
+  .nav__list {
+    span, a {
+      color: #e5e5e5 !important;
+      &:hover {
+        color: #82b1ff !important;
+      }
+    }
+  }
+}
