@@ -87,3 +87,19 @@ body {
 .archive__subtitle {
   font-size: 1.5em !important;
 }
+
+/* 사이드바 방문자 카운터 스타일 */
+.sidebar__visitor-counter {
+  /* 약간의 반투명 배경을 주어 검은 배경과 분리감을 줍니다 */
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    /* 마우스를 올리면 네온 효과가 강해집니다 */
+    img {
+      filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.8));
+    }
+  }
+}
