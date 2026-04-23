@@ -45,6 +45,12 @@ defaults:
       sidebar:
         nav: "category_nav"  # 카테고리 화면에서도 좌측 메뉴를 강제 출력
 
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-X2VM2HBHKH" # 여기에 발급받은 ID 딱 하나만 적어줍니다!
+    anonymize_ip: false
+
 # Footer
 footer:
   links:
