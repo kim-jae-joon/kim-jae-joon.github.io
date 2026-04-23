@@ -10,7 +10,7 @@ sidebar:
   {% assign cat_posts = category[1] %}
   
   <h2 class="archive__subtitle" style="margin-top: 2em; border-bottom: 2px solid #f2f2f2; padding-bottom: 10px;">
-    <a href="{{ '/categories/#' | append: (cat_name | slugify) | relative_url }}" style="text-decoration: none; color: #333;">
+    <a href="{{ '/categories/' | relative_url }}#{{ cat_name | slugify }}" style="text-decoration: none; color: #333;">
       📂 {{ cat_name }}
     </a>
   </h2>
@@ -22,7 +22,7 @@ sidebar:
   </div>
   
   <div style="text-align: right; margin-bottom: 3em;">
-    <a href="{{ '/categories/#' | append: (cat_name | slugify) | relative_url }}" style="font-size: 0.9em; color: #007bff; font-weight: bold;">
+    <a href="{{ '/categories/' | relative_url }}#{{ cat_name | slugify }}" style="font-size: 0.9em; color: #007bff; font-weight: bold;">
       {{ cat_name }} 글 더보기 &rarr;
     </a>
   </div>
