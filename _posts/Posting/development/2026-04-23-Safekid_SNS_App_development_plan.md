@@ -89,7 +89,7 @@ def calculate_risk_score(image_score: float, text_score: float, url_score: float
 
 ## 6. 앞으로의 개발 로드맵
 
-앞으로의 계획은 크게 4단계로 나누어 진행하려고 합니다.
+앞으로의 계획은 크게 3단계로 나누어 진행하려고 합니다.
 
 1. **Phase 1**: Rust 기반 키워드 매칭 엔진 및 UniFFI 바인딩 라이브러리 개발
 2. **Phase 2**: Python FastAPI 서버 구축 및 ML 모델(NSFW, KoBERT) 파이프라인 최적화
