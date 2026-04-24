@@ -1,11 +1,15 @@
 ---
 layout: single
 title: "[Project] SafeKids SNS: AI 기반 실시간 아동 유해 콘텐츠 차단 시스템 설계"
-date: 2026-04-24
-categories: [Project, Rust, Python]
+excerpt: "결혼을 앞둔 시점, 내 아이를 위한 프로그램을 만들어보는 뜻 깊은 개발을 해보자."
+# 카테고리를 [언어/기술, 성격] 형태로 분리하면 관리가 훨씬 수월해요.
+categories: development
 tags: [SafeKids, AI, On-device, Filtering]
+sidebar:
+  nav: "category_nav"
+toc: true
+toc_sticky: true
 ---
-
 안녕하세요!
 
 결혼을 약 1년 2개월 앞둔 시점에서, 미래에 태어날 우리 아이가 마주하게 될 디지털 환경에 대해 깊이 고민해보게 되었습니다. 현재의 SNS 환경은 알고리즘에 의해 자극적이고 유해한 콘텐츠가 너무 무방비하게 노출되는 구조적인 문제를 안고 있어요. 
