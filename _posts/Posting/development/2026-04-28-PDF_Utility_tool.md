@@ -40,7 +40,7 @@ https://www.ilovepdf.com/
 
 파일 다운로드는 다음과 같습니다.
 
-[Google Drive 다운로드 링크](https://drive.google.com/your-link-here)
+[Google Drive 다운로드 링크]([https://drive.google.com/your-link-here](https://drive.google.com/file/d/19kr29x3UzAozZL-9jMxCPYdMuWdFaMBP/view?usp=sharing))
 
 ---
 
