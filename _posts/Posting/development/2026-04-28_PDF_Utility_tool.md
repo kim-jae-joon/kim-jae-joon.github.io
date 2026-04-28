@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "PDF 유틸리티 도구 무료 배포"
+date: 2026-04-29 22:00:00
 categories: development
 tags: [PDF, Utility, Automation, Tool]
 sidebar:
@@ -19,7 +20,6 @@ toc_sticky: true
 
 저 역시 그동안은 아래 사이트를 자주 사용했습니다.
 
-:contentReference[oaicite:0]{index=0}  
 https://www.ilovepdf.com/
 
 해당 사이트는 PDF 관련 기능을 굉장히 잘 제공하고 있어서 빠르게 작업할 때는 정말 편리한 서비스입니다.
