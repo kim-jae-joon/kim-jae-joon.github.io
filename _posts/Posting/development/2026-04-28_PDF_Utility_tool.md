@@ -41,7 +41,7 @@ https://www.ilovepdf.com/
 
 파일 다운로드는 다음과 같습니다.
 
-[프로그램 다운로드]({{ site.baseurl }}/assets/files/pdf_utility_tool.zip)
+[Google Drive 다운로드 링크](https://drive.google.com/your-link-here)
 
 ---
 
