@@ -114,3 +114,77 @@ body {
     }
   }
 }
+
+/* ---------------------------------------------------
+   네이버 블로그 느낌 UI (배경은 유지)
+--------------------------------------------------- */
+
+/* 상단 헤더를 밝은 카드처럼 분리 */
+.masthead {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+
+  .site-title,
+  .visible-links a {
+    color: #222 !important;
+    font-weight: 700;
+  }
+
+  .visible-links a:hover {
+    color: #03c75a !important; /* 네이버 포인트 컬러 */
+  }
+}
+
+/* 본문/사이드바를 카드형 레이아웃으로 */
+.layout--single,
+.layout--archive {
+  .sidebar {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+    padding: 14px 12px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+
+    .author__name,
+    .author__bio,
+    .nav__title,
+    .nav__items a,
+    .nav__items span {
+      color: #242424 !important;
+    }
+  }
+
+  .page__inner-wrap {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+    color: #222 !important;
+  }
+}
+
+/* 목록형 페이지 카드 느낌 */
+.archive__item {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+}
+
+.archive__item-title a,
+.archive__item-excerpt {
+  color: #222 !important;
+}
+
+/* 링크/버튼 계열 색을 네이버 톤으로 통일 */
+a,
+.btn,
+.pagination--pager {
+  &:hover {
+    color: #03c75a !important;
+    border-color: #03c75a !important;
+  }
+}
