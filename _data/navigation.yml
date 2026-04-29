@@ -1,10 +1,6 @@
 # _data/navigation.yml
 
-main:
-  - title: "홈"
-    url: /
-  - title: "주제별 강의 (카테고리)"
-    url: /categories/
+main: []
 
 category_nav:
   - title: "AI 강의"
