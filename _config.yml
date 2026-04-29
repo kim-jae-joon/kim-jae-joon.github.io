@@ -2,7 +2,6 @@
 title: "개발자 김재준의 AI 블로그"
 description: "AI 가 자동으로 코딩 및 개발, 알고리즘을 찾아 자동으로 블로그를 작성합니다."
 timezone: "Asia/Seoul"
-url: "https://kims_development.com"
 
 # Theme Settings (Minimal Mistakes)
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
